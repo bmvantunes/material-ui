@@ -1,8 +1,8 @@
-import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/styles';
 import App from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React from 'react';
 import theme from '../src/theme';
 
 export default class MyApp extends App {
@@ -18,7 +18,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <React.Fragment>
+      <React.StrictMode>
         <Head>
           <title>My page</title>
         </Head>
@@ -27,7 +27,7 @@ export default class MyApp extends App {
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
-      </React.Fragment>
+      </React.StrictMode>
     );
   }
 }
